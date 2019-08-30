@@ -11,31 +11,38 @@ The developed solutions takes advantage of the naming of the 10 given different 
 A loop iterates through the different numbers when executing the request and write module of the function. Using a let variable (and its local nature) inside the loop prevents a bug which normally occurs due to the asynchronous nature of javascript.
 Step by step comments in code:
 
-```var request = require('request');
+```
+var request = require('request');
 var fs = require('fs');
 ```
 
 _//* adress from where to take_ 
-```var take = 'https://parsons.nyc/aa/m'
+```
+var take = 'https://parsons.nyc/aa/m'
 ```
 
 _//* adress where to make_ 
-```var make = '/home/ec2-user/environment/01_week01/data/'
+```
+var make = '/home/ec2-user/environment/01_week01/data/'
 ```
 
 _//* quantity/number suffix of takes and makes_
-```var it =['01','02','03','04','05','06','07','08','09','10'];
+```
+var it =['01','02','03','04','05','06','07','08','09','10'];
 ```
 
 _//* loop_
-```for  (var i=0; i<10; i++)  {```
+```
+for  (var i=0; i<10; i++)  {
+```
     
     _//* creating new variables with keywords var and let; using let prevents the bug in the loop_
     _//* (source:_ 
     _//* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures_ 
     _//* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let )_
     _//* adding quantity and file suffix_
-    ```var first = take + it[i] + '.html';
+    ```
+    var first = take + it[i] + '.html';
     let then = make + it[i] + '.txt';
     ```
     
