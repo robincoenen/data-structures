@@ -5,8 +5,8 @@ Week 1 — Request and Write
 
 ––––––––––––––––––––––––––
 
-Given were 10 html adresses/files, which needed to be 'accessed' through node.js with a request module.
-After requesting and accessing the (content of the) html files the content was written with a writeFileSync module in 10 new .txt files.
+## Given were 10 html adresses/files, which needed to be 'accessed' through node.js with a request module.
+## After requesting and accessing the (content of the) html files the content was written with a writeFileSync module in 10 new .txt files.
 
 ––––––––––––––––––––––––––
 
@@ -49,13 +49,16 @@ for  (var i=0; i<10; i++)  {
 
 ––––––––––––––––––––––––––
 
-<sub> *time spent*
+<sub>**time spent**
 ca. 3 days à 4 hours. 
-*learnings*
+**learnings**
 extensive google research (some finding help, some confuses even more), 
 logical thinking simplifies code and helps, 
 nature of let and var keywords, 
 general structure of functions.
 tried to use async/await but were not able to work it out -> follow-up
-*illustrative image*
-Extract, original made by robert tinney, used for BYTE magazine, october 1980, volume 5, number 10, found here: https://archive.org/details/byte-magazine-1980-10
+**illustrative image**
+Extract, original made by robert tinney, 
+used for BYTE magazine, 
+october 1980, volume 5, number 10, 
+found here: https://archive.org/details/byte-magazine-1980-10<sub>
