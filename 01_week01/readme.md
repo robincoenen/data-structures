@@ -8,7 +8,7 @@ Week 1 — Request and Write
 
 
 The developed solutions takes advantage of the naming of the 10 given different html files (numbered consecutively) and creates variables accordingly.
-A loop iterates through the different numbers when executing the request and write module of the function. Using a let variable (and its local nature) inside the loop prevents a bug which normally occurs due to the asynchronous nature of javascript. The newly written text files are stored in a file called "data"
+A loop iterates through the different numbers when executing the request and write module of the function. Using a let variable (and its local nature) inside the loop prevents a bug which normally occurs due to the asynchronous nature of javascript. The newly written text files are stored in a file called "data".
 Step by step comments in code:
 
 ```
@@ -51,11 +51,11 @@ for  (var i=0; i<10; i++)  {
 **time spent**
 ca. 3 days à 4 hours. 
 **learnings**
-extensive google research (some finding help, some confuses even more), 
+extensive google research gives hints (some findings help, some confuses even more), 
 logical thinking simplifies code and helps, 
 nature of let and var keywords, 
 general structure of functions.
-tried to use async/await but were not able to work it out -> follow-up
+tried to use async/await first but were not able to make it work -> follow-up
 **illustrative image**
 extract, original image made by robert tinney, 
 used for BYTE magazine, 
