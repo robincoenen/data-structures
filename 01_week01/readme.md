@@ -1,7 +1,7 @@
 Week 1 — Request and Write
 ==========================
 
-    ![alt text](https://github.com/robincoenen/data-structures/01_week01/illustrative_image.png)
+![alt text](https://github.com/robincoenen/data-structures/01_week01/illustrative_image.png)
 
 ––––––––––––––––––––––––––
 
