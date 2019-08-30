@@ -14,27 +14,27 @@ Step by step comments in code:
 ```var request = require('request');
 var fs = require('fs');
 
-//* adress from where to take 
+_//* adress from where to take_ 
 var take = 'https://parsons.nyc/aa/m'
 
-//* adress where to make 
+_//* adress where to make_ 
 var make = '/home/ec2-user/environment/01_week01/data/'
 
-//* quantity/number suffix of takes and makes
+_//* quantity/number suffix of takes and makes_
 var it =['01','02','03','04','05','06','07','08','09','10'];
 
-//* loop
+_//* loop_
 for  (var i=0; i<10; i++)  {
     
-    //* creating new variables with keywords var and let; using let prevents the bug in the loop 
-    //* (source: 
-    //*https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures  
-    //* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let )
-    //* adding quantity and file suffix
+    _//* creating new variables with keywords var and let; using let prevents the bug in the loop_
+    _//* (source:_ 
+    _//*https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures_ 
+    _//* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let )_
+    _//* adding quantity and file suffix_
     var first = take + it[i] + '.html';
     let then = make + it[i] + '.txt';
     
-     //* using new variables in request
+    _ //* using new variables in request_
     request(first, function(error, response, body){
         if (!error && response.statusCode == 200) {
              fs.writeFileSync(then, body);
