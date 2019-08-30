@@ -3,11 +3,9 @@ Week 1 — Request and Write
 
 ![alt text](./illustrative_image.png)
 
-––––––––––––––––––––––––––
 
 ## Given are 10 html adresses/files, which needed to be 'accessed' through node.js with a request module. After requesting and accessing the (content of the) html files the content was written with a writeFileSync module in 10 new .txt files.
 
-––––––––––––––––––––––––––
 
 The developed solutions takes advantage of the naming of the 10 given different html files (numbered consecutively) and creates variables accordingly.
 A loop iterates through the different numbers when executing the request and write module of the function. Using a let variable (and its local nature) inside the loop prevents a bug which normally occurs due to the asynchronous nature of javascript.
