@@ -1,7 +1,7 @@
 Week 1 — Request and Write
 ==========================
 
-![alt text](illustrative_image.png)
+![alt text](./illustrative_image.png)
 
 ––––––––––––––––––––––––––
 
