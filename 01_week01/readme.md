@@ -45,11 +45,12 @@ for  (var i=0; i<10; i++)  {
         else {console.log("Request failed!")}
 });
 
-}```
+}
+```
 
 ––––––––––––––––––––––––––
 
-<sub>**time spent**
+**time spent**
 ca. 3 days à 4 hours. 
 **learnings**
 extensive google research (some finding help, some confuses even more), 
@@ -61,4 +62,4 @@ tried to use async/await but were not able to work it out -> follow-up
 Extract, original made by robert tinney, 
 used for BYTE magazine, 
 october 1980, volume 5, number 10, 
-found here: https://archive.org/details/byte-magazine-1980-10<sub>
+found here: https://archive.org/details/byte-magazine-1980-10
