@@ -5,8 +5,7 @@ Week 1 — Request and Write
 
 ––––––––––––––––––––––––––
 
-## Given were 10 html adresses/files, which needed to be 'accessed' through node.js with a request module.
-## After requesting and accessing the (content of the) html files the content was written with a writeFileSync module in 10 new .txt files.
+## Given are 10 html adresses/files, which needed to be 'accessed' through node.js with a request module. After requesting and accessing the (content of the) html files the content was written with a writeFileSync module in 10 new .txt files.
 
 ––––––––––––––––––––––––––
 
