@@ -1,11 +1,8 @@
-//strategy 1 : target always the first td of a tr
-//strategy 2: target the horizontal line and select elements from there
-
 
 var fs = require('fs');
 var cheerio = require('cheerio');
 
-// load the thesis text file into a variable, `content`
+// load the searched content file into a variable, `content`
 // this is the file that we created in the starter code from last week
 var content = fs.readFileSync('/home/ec2-user/environment/data-structures/01_week01/data/06.txt');
 
