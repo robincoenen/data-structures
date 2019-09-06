@@ -11,9 +11,15 @@ var $ = cheerio.load(content);
 
 
 // print (to the console) adresses
-    $('tr tr tr').each(function(i, elem) {
+ $('tr tr tr').each(function(i, elem) {
+            $(this).find('div').remove().html();
+            $(this).find('br').remove().html();
+            $(this).find('span').remove().html();
                  console.log($(elem).children().first().text().trim());
 });
+
+
+
 
 // write the adresses to a text file
 var result = ''; // this variable will hold the lines of text
