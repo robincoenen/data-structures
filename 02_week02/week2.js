@@ -26,6 +26,9 @@ var $ = cheerio.load(content);
             .replace(/\s\N\Y/g,', NY '));
 });
 
+
+
+
 //.replace(/\s\n/g,'\n').replace(/\n/g,'')
 //.replace(/\s\s\n/g,',').replace(/\s/g,'').replace(/\,\,/g,',')
 //.replace(/\,/g,'\,\n').replace(/\s+\s+/g,'')
@@ -34,11 +37,18 @@ var $ = cheerio.load(content);
 var result = ''; // this variable will hold the lines of text
 
 $('tr tr tr').each(function(i, elem) {
-            $(this).find('div').remove().html();
+          $(this).find('div').remove().html();
             $(this).find('br').remove().html();
             $(this).find('b').remove().html();
             $(this).find('span').remove().html();
-    result += ($(elem).children().first().text().trim()) + '\n';
+    result += ($(elem).children().first().text().trim()
+            .replace(/\s\s\s\s\s\s\s\s\s\s\s\s/g,'')
+            .replace(/\s\s\s\s/g,',')
+            .replace(/\,\s+\s+/g,',')
+            .replace(/\,\,\,/g,',')
+            .replace(/\,/g,', ')
+            .replace(/\,\s\s/g,', ')
+            .replace(/\s\N\Y/g,', NY ')) + '\n';
 });
 
 fs.writeFileSync('new.txt', result);
