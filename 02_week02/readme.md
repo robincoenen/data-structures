@@ -81,10 +81,10 @@ fs.writeFileSync('adresses_06.txt', result);
 **time spent**
 ca. 3 days à 3 hours. 
 **learnings**
-inspector helps to understand html structure of elements, 
-how to target html strings and replace/split/slice them, 
+inspector is an immense help to understand html structure of given fiiles, 
+javascript string methods to work with text, 
 still need to insert some missing data to achieve consistent structure of adresses (e.g not all zip codes have prefix NY) -> follow-up, 
-there might be an easier solution, instead of building a long trial/error "".replace" string -> follow-up.
+instead of building a long trial/error ".replace" string, there might be a cleaner solution -> follow-up.
 **illustrative image**
 extract, original image made by robert tinney, 
 used for BYTE magazine, 
