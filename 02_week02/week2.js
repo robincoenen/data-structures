@@ -58,4 +58,4 @@ $('tr tr tr').each(function(i, elem) {
             .replace(/\,\,\s\N\Y/g,', NY'))+ '\n';
 });
 
-fs.writeFileSync('adresses_06.txt', result);
+fs.writeFileSync('adresses_06.json', JSON.stringify(result));
