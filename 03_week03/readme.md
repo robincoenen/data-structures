@@ -86,7 +86,7 @@ javascript string methods to work with text,
 still need to insert some missing data to achieve consistent structure of adresses (e.g not all zip codes have prefix NY) -> follow-up, 
 instead of building a long trial/error ".replace" string, there might be a cleaner solution -> follow-up.
 **illustrative image**
-extract, original image made by robert tinney, 
+collage, original image made by ken lodding, 
 used for BYTE magazine, 
-march 1981, volume 6, number 3, 
-found here: https://archive.org/details/byte-magazine-1981-03
+november 1978, volume 3, number 11, 
+found here: https://archive.org/details/byte-magazine-1978-11-rescan
