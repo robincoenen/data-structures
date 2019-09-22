@@ -5,8 +5,9 @@ var fs = require('fs');
 const dotenv = require('dotenv'); // npm install dotenv
 
 // TAMU api key
-dotenv.config();
+dotenv.config({path: '/home/ec2-user/environment/.env'});
 const apiKey = process.env.TAMU_KEY;
+
 
 // geocode addresses temp
 var source = fs.readFileSync('adresses_06.json');
