@@ -8,14 +8,13 @@ Week 4 — Creating a Database
 
 The interaction with a database is processed in different steps. First and most important step is to find a good concept for a working database.
 Then the database needs to be initialised, the tables need to be created and then the respective data needs to be inserted.
-After that one can fetch ("select") the needed data from table.
+After that one can fetch ("select") the needed data from table.\
 
 
 ```
 const { Client } = require('pg');
 var fs = require('fs');
 var async = require('async');
-
 
 // AWS RDS POSTGRESQL INSTANCE
 var db_credentials = new Object();
@@ -25,11 +24,9 @@ db_credentials.database = 'aa';
 db_credentials.password = process.env.PW;       
 db_credentials.port = 5432;
 
-
 // Connect to the AWS RDS Postgres database
 const client = new Client(db_credentials);
 client.connect();
-
 
 
 ////CREATE
@@ -44,7 +41,6 @@ client.connect();
 //     console.log(err, res);
 //     client.end();
 // });
-
 
 // client.query(queryLocations, (err, res) => {
 //     console.log(err, res);
@@ -62,8 +58,6 @@ client.connect();
 // });
 
 
-
-
 ////DELETE
 ////These lines delete respective tables -> DROP TABLE
 
@@ -77,7 +71,6 @@ client.connect();
 //     console.log(err, res);
 //     client.end();
 // });
-
 
 
 ////INSERT
@@ -101,16 +94,7 @@ client.connect();
 // });
 
 
-
-
-
-
-
-
 //CHECK
-
-//CHECK
-
 // Sample SQL statement to query the entire contents of a table -> SELECT * FROM
 var thisQuery = "SELECT * FROM temploc;";
 
