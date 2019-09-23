@@ -10,6 +10,9 @@ The interaction with a database is processed in different steps. First and most 
 Then the database needs to be initialised, the tables need to be created and then the respective data needs to be inserted.
 After that one can fetch ("select") the needed data from table.\
 
+First database concept:
+![alt text](./database_a.png)
+
 
 ```
 const { Client } = require('pg');
