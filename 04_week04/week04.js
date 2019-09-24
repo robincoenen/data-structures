@@ -2,24 +2,21 @@ const { Client } = require('pg');
 var fs = require('fs');
 var async = require('async');
 
-
 // AWS RDS POSTGRESQL INSTANCE
 var db_credentials = new Object();
 db_credentials.user = 'robincoenen';
 db_credentials.host = 'database-structures.coqr4cljipbf.us-east-2.rds.amazonaws.com';
 db_credentials.database = 'aa';
-db_credentials.password = 'Bashment';       
+db_credentials.password = process.env.PW;       
 db_credentials.port = 5432;
-
 
 // Connect to the AWS RDS Postgres database
 const client = new Client(db_credentials);
 client.connect();
 
 
-
 ////CREATE
-////Creating the different tables. Due to problems with the writing of data into the table I created a shorter interim table, until I solve the problem.
+////Creating the different tables. Due to problems with the writing of data into the table I created a shorter interim table, until I solve the problem. -> CREATE TABLE ""
 //var queryTemp = "CREATE TABLE temploc (adressline varchar(500), city varchar(150), state varchar(10), lat double precision, long double precision);";
 //var queryLocations = "CREATE TABLE locations (adressline varchar(500), lat double precision, long double precision, city varchar(150), state varchar(10), zipcode varchar(5), adress_description varchar(500), location_name varchar(500),location_id serial primary key);";
 //var querySpecifics = "CREATE TABLE group_specifics (group_id serial primary key, meeting_type varchar(500), wheelchair_access BOOL, special_interest varchar(500), additional_description varchar(500));";
@@ -30,7 +27,6 @@ client.connect();
 //     console.log(err, res);
 //     client.end();
 // });
-
 
 // client.query(queryLocations, (err, res) => {
 //     console.log(err, res);
@@ -48,10 +44,8 @@ client.connect();
 // });
 
 
-
-
 ////DELETE
-////These lines delete respective tables
+////These lines delete respective tables -> DROP TABLE
 
 // Sample SQL statement to delete a table: 
 //var thisQuery = "DROP TABLE Locationsshorts;";
@@ -65,9 +59,8 @@ client.connect();
 // });
 
 
-
 ////INSERT
-////These lines fetch the data from the .json and then inserts them into the row
+////These lines fetch the data from the .json and then inserts them into the rows of the respective tables. -> INSERT INTO "" VALUES
 
 // var addressesForDb = fs.readFileSync("geo_06.json");
 // addressesForDb = JSON.parse(addressesForDb);
@@ -87,16 +80,8 @@ client.connect();
 // });
 
 
-
-
-
-
-
-
 //CHECK
-
-
-// Sample SQL statement to query the entire contents of a table: 
+// Sample SQL statement to query the entire contents of a table -> SELECT * FROM
 var thisQuery = "SELECT * FROM temploc;";
 
 client.query(thisQuery, (err, res) => {
