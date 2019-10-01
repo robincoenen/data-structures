@@ -125,9 +125,7 @@ ca. 1 day à 3 hours
 **learnings**
 It seems that I, personally prefer non-relational databases, probably as I am used to think about how to organise information visually, so that users understand the information. 
 **illustrative image**
-original image by: unspecified, 
+original image by: Catherine Kanner, 
 used for BYTE magazine, 
-november 1981, volume 8, number 11, 
-found here: https://archive.org/details/byte-magazine-1981-11
-
- 
+1985, volume 10, number 11, 
+found here: https://archive.org/details/byte-magazine-1985-11
