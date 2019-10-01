@@ -7,7 +7,7 @@ Week 4 — Creating a NoSql-Database
 ## A NoSql database (DynamboDB) was created in the AWS Environment. An internal aws sdk module allows to interact with the database, e.g., deleting tables, creating tables, inserting data, selecting tables/rows.
 
 A NoSql database allows more freedom in the organisation of its structure than a sql database. The organisation of my processblog is therefore straightforward. 
-I am using the structure of my github documentation. Furthermore I am adding a column called "Annotations" as the topic "data-structures", viewed from a media-cultural and socio-political perspective 
+I am using the structure of my github documentation. Furthermore I am adding a column called "Annotations". As the topic "data-structures", viewed from a media-cultural and socio-political perspective 
 (also the Gitelman readings) are related to potential subects I am interested to research in my thesis. In the annotations column I will add whatever informations (links, literature etc.) I will find.
 This processblog could then be a useful source as a startingpoint for my thesis.    \
 
