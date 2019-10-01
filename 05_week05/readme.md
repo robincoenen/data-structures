@@ -1,120 +1,129 @@
-Week 4 — Creating a Database
+Week 4 — Creating a NoSql-Database
 ==========================
 
-![alt text](./illustrative_image_4.png)
+![alt text](./illustrative_image_5.png)
 
 
-## A postgressql database was created in the AWS Environment.The pg module allows to interact with the database, e.g., deleting tables, creating tables, inserting data, selecting tables/rows.
+## A NoSql database (DynamboDB) was created in the AWS Environment. An internal aws sdk module allows to interact with the database, e.g., deleting tables, creating tables, inserting data, selecting tables/rows.
 
-The interaction with a database is processed in different steps. First and most important step is to find a good concept for a working database.
-Then the database needs to be initialised, the tables need to be created and then the respective data needs to be inserted.
-After that one can fetch ("select") the needed data from table.\
+A NoSql database allows more freedom in the organisation of its structure than a sql database. The organisation of my processblog is therefore straightforward. 
+I am using the structure of my github documentation. Furthermore I am adding a column called "Annotations" as the topic "data-structures", viewed from a media-cultural and socio-political perspective 
+(also the Gitelman readings) are related to potential subects I am interested to research in my thesis. In the annotations column I will add whatever informations (links, literature etc.) I will find.
+This processblog could then be a useful source as a startingpoint for my thesis.    \
 
 First database concept:
-![alt text](./database_a.png)
+![alt text](./database_concept_a.png)
 
+Proof of Concept:
+![alt text](./proofofconcept.png)
 
 ```
-const { Client } = require('pg');
-var fs = require('fs');
+var blogEntries = [];
 var async = require('async');
 
-// AWS RDS POSTGRESQL INSTANCE
-var db_credentials = new Object();
-db_credentials.user = 'robincoenen';
-db_credentials.host = 'database-structures.coqr4cljipbf.us-east-2.rds.amazonaws.com';
-db_credentials.database = 'aa';
-db_credentials.password = process.env.PW;       
-db_credentials.port = 5432;
+//Creating the data which will be pushed into the database
 
-// Connect to the AWS RDS Postgres database
-const client = new Client(db_credentials);
-client.connect();
+class BlogEntry {
+  constructor(primaryKey, date, title, image, subtitle, text, timespent, learning, credits, annotations) {
+    this.pk = {};
+    this.pk.S = primaryKey;
+    this.date = {}; 
+    this.date.S = date;
+    this.title = {};
+    this.title.S = title;
+    this.image = {};
+    this.image.S = image;
+    this.subtitle = {};
+    this.subtitle.S = subtitle;
+    this.text = {};
+    this.text.S = text;
+    this.timespent = {};
+    this.timespent.S = timespent;
+    this.learning = {};
+    this.learning.S = learning;
+    this.credits = {};
+    this.credits.S = credits;
+     this.annotations = {};
+    this.annotations.S = annotations;
+    }
+   
+}
 
+//Actual Data Content
 
-////CREATE
-////Creating the different tables. Due to problems with the writing of data into the table I created a shorter interim table, until I solve the problem. -> CREATE TABLE ""
-//var queryTemp = "CREATE TABLE temploc (adressline varchar(500), city varchar(150), state varchar(10), lat double precision, long double precision);";
-//var queryLocations = "CREATE TABLE locations (adressline varchar(500), lat double precision, long double precision, city varchar(150), state varchar(10), zipcode varchar(5), adress_description varchar(500), location_name varchar(500),location_id serial primary key);";
-//var querySpecifics = "CREATE TABLE group_specifics (group_id serial primary key, meeting_type varchar(500), wheelchair_access BOOL, special_interest varchar(500), additional_description varchar(500));";
-//var queryTime = "CREATE TABLE time (day varchar(75), time_start varchar(150), time_end varchar(500));";
+blogEntries.push(new BlogEntry("0", 'August 28 2019', 
+'HELLO WORLD TITLE', 'https://github.com/robincoenen/data-structures/blob/master/01_week01/illustrative_image.png', 'Hello Subtitle',
+'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
+'Timespent around 5h',
+'five learnings',
+'this is a credit',
+'look this annotation up'));
 
-////These lines create the different tables
-// client.query(queryTemp, (err, res) => {
-//     console.log(err, res);
-//     client.end();
-// });
+blogEntries.push(new BlogEntry("1", 'August 29 2019', 
+'HELLO WORLD TITLE', 'https://github.com/robincoenen/data-structures/blob/master/01_week01/illustrative_image.png', 'Hello Subtitle 2',
+'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
+'Timespent around 5h',
+'five learnings',
+'this is a credit',
+'look this annotation up'));
 
-// client.query(queryLocations, (err, res) => {
-//     console.log(err, res);
-//     client.end();
-// });
-
-// client.query(querySpecifics, (err, res) => {
-//     console.log(err, res);
-//     client.end();
-// });
-
-// client.query(queryTime, (err, res) => {
-//     console.log(err, res);
-//     client.end();
-// });
-
-
-////DELETE
-////These lines delete respective tables -> DROP TABLE
-
-// Sample SQL statement to delete a table: 
-//var thisQuery = "DROP TABLE Locationsshorts;";
-//var thisQuery = "DROP TABLE group_specifics;";
-//var thisQuery = "DROP TABLE time;";
-// var thisQuery = "DROP TABLE temploc;";
-
-// client.query(thisQuery, (err, res) => {
-//     console.log(err, res);
-//     client.end();
-// });
+blogEntries.push(new BlogEntry("2", 'August 30 2019', 
+'HELLO WORLD TITLE', 'https://github.com/robincoenen/data-structures/blob/master/01_week01/illustrative_image.png', 'Hello Subtitle 3',
+'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
+'Timespent around 5h',
+'five learnings',
+'this is a credit',
+'look this annotation up'));
 
 
-////INSERT
-////These lines fetch the data from the .json and then inserts them into the rows of the respective tables. -> INSERT INTO "" VALUES
+//Checking the actual content
 
-// var addressesForDb = fs.readFileSync("geo_06.json");
-// addressesForDb = JSON.parse(addressesForDb);
+//console.log(blogEntries);
 
-// async.eachSeries(addressesForDb, function(value, callback) {
-//     const client = new Client(db_credentials);
-//     client.connect();
+
+//Using the AWS SDK to fill the created table
+//Note -> Created IAM Role for permission, instead of a key!
+
+
+var AWS = require('aws-sdk');
+AWS.config = new AWS.Config();
+AWS.config.region = "us-east-2";
+
+var dynamodb = new AWS.DynamoDB();
+
+var params = {};
+// params.Item = blogEntries[0]; 
+
+//Loop which iterates over all content (see actual content)
+
+
+var i = 0 ;
+    for (i=0; i < blogEntries.length; i++){
+        params.Item += blogEntries[i];  
+        }
+params.TableName = "process";
+
+//Pushing the items
+// Note: Time out in order to avoid upload problems
+
+
+async.eachSeries(blogEntries, function(value, callback) {
+    params.Item = value;
+    dynamodb.putItem(params, function (err, data) {
+        if (err) console.log(err, err.stack); // an error occurred
+        else console.log(data); // successful response
+    });
     
-    
-//     var thisQuery = "INSERT INTO temploc VALUES (E'" + value.streetaddress.StreetAddress + "','" + value.streetaddress.City + "', '" + value.streetaddress.State + "'," + value.latitude + ", " + value.longitude + ");";
-
-//     client.query(thisQuery, (err, res) => {
-//         console.log(err, res);
-//         client.end();
-//     });
-//     setTimeout(callback, 1000); 
-// });
-
-
-//CHECK
-// Sample SQL statement to query the entire contents of a table -> SELECT * FROM
-var thisQuery = "SELECT * FROM temploc;";
-
-client.query(thisQuery, (err, res) => {
-    console.log(err, res.rows);
-    client.end();
-});
+setTimeout(callback, 2000);
+}); 
 ```
 
 ––––––––––––––––––––––––––
 
 **time spent**
-ca. 1 day à 4 hours 
+ca. 1 day à 3 hours 
 **learnings**
-Its interesting to think "in" relational databases, how to structure/organise data.  -> Learning
-Hypothesis: Every classification needs a place(row) to put the "garbage", which cannot be classified -> Learning
-I had severals problems to insert data into the table/rows. How to skip a row for example? -> Follow up
+It seems that I, personally prefer non-relational databases, probably as I am used to think about how to organise information visually, so that users understand the information. 
 **illustrative image**
 original image by: unspecified, 
 used for BYTE magazine, 
