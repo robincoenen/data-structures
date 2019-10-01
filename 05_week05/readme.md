@@ -1,4 +1,4 @@
-Week 4 — Creating a NoSql-Database
+Week 5 — Creating a NoSql-Database
 ==========================
 
 ![alt text](./illustrative_image_5.png)
@@ -123,7 +123,7 @@ setTimeout(callback, 2000);
 **time spent**
 ca. 1 day à 3 hours 
 **learnings**
-It seems that I, personally prefer non-relational databases, probably as I am used to think about how to organise information visually, so that users understand the information. 
+It seems that I, personally, prefer non-relational databases, probably as I am used to think about how to organise information visually, so that users understand the information. 
 **illustrative image**
 original image by: Catherine Kanner, 
 used for BYTE magazine, 
