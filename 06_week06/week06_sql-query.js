@@ -1,20 +1,3 @@
-Week 4 — Creating a Database
-==========================
-
-![alt text](./illustrative_image_4.png)
-
-
-## A postgressql database was created in the AWS Environment.The pg module allows to interact with the database, e.g., deleting tables, creating tables, inserting data, selecting tables/rows.
-
-The interaction with a database is processed in different steps. First and most important step is to find a good concept for a working database.
-Then the database needs to be initialised, the tables need to be created and then the respective data needs to be inserted.
-After that one can fetch ("select") the needed data from table.\
-
-First database concept:
-![alt text](./database_a.png)
-
-
-```
 const { Client } = require('pg');
 var fs = require('fs');
 var async = require('async');
@@ -24,7 +7,7 @@ var db_credentials = new Object();
 db_credentials.user = 'robincoenen';
 db_credentials.host = 'database-structures.coqr4cljipbf.us-east-2.rds.amazonaws.com';
 db_credentials.database = 'aa';
-db_credentials.password = process.env.PW;       
+db_credentials.password = "Flingern2019";       
 db_credentials.port = 5432;
 
 // Connect to the AWS RDS Postgres database
@@ -99,26 +82,9 @@ client.connect();
 
 //CHECK
 // Sample SQL statement to query the entire contents of a table -> SELECT * FROM
-var thisQuery = "SELECT * FROM temploc;";
+var thisQuery = "SELECT adressline, city, state FROM temploc WHERE city = 'New York';";
 
 client.query(thisQuery, (err, res) => {
     console.log(err, res.rows);
     client.end();
 });
-```
-
-––––––––––––––––––––––––––
-
-**time spent**
-ca. 1 day à 4 hours 
-**learnings**
-Its interesting to think "in" relational databases, how to structure/organise data.  -> Learning
-Hypothesis: Every classification needs a place(row) to put the "garbage", which cannot be classified -> Learning
-I had severals problems to insert data into the table/rows. How to skip a row for example? -> Follow up
-**illustrative image**
-original image by: unspecified, 
-used for BYTE magazine, 
-november 1981, volume 8, number 11, 
-found here: https://archive.org/details/byte-magazine-1981-11
-
- 
