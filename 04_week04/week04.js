@@ -14,7 +14,6 @@ db_credentials.port = 5432;
 const client = new Client(db_credentials);
 client.connect();
 
-
 ////CREATE
 ////Creating the different tables. Due to problems with the writing of data into the table I created a shorter interim table, until I solve the problem. -> CREATE TABLE ""
 //var queryTemp = "CREATE TABLE temploc (adressline varchar(500), city varchar(150), state varchar(10), lat double precision, long double precision);";
