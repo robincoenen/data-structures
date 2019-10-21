@@ -35,19 +35,38 @@ var scheduleData =[];
 }
 
        else if ($(elem).attr("style") == "border-bottom:1px solid #e3e3e3;width:350px;"){
-         //text within each meeting info td (contains multiple meeting times)
-         
-          var thisTime = {};
+
+          ///var thisTime = {};
+          //var thisTime = $(elem).html().trim();
+          //thisTime.time = $(elem).html().split('<br>')[0].trim();
+          //thisTime.day = ($(elem).split('b').eq(0).text().trim());
+          //thisTime.time = ($(elem).find('b').nextUntil('text','b').text().trim());
           
-          thisTime.time = $(elem).html().split('<br>')[2].trim();
-          scheduleData.push(thisTime);
+         var thisTime = $(elem).text().trim();
+         
+                    thisTime = thisTime.replace(/[ \t]+/g, " ").trim();
+                    thisTime = thisTime.replace(/[\r\n|\n]/g, " ").trim();
+                    thisTime = thisTime.split("        ");
+
+          //scheduleData.push(thisTime);
+          var singleMeeting = [];    
+                    for (var i=0; i<thisTime.length; i++){
+                    var scheduleSingle = {};
+                    scheduleSingle.day = thisTime[i].trim().split(' ')[0];
+                    scheduleSingle.startTime = thisTime[i].trim().split(' ')[2];
+                    scheduleSingle.endTime = thisTime[i].trim().split(' ')[5];
+                    scheduleSingle.time = thisTime[i].trim().split(' ')[3];
+                    scheduleSingle.type = thisTime[i].trim().split(' ')[9];
+                    singleMeeting.push(scheduleSingle);
+                    console.log(singleMeeting);
+                    }
      }
  });
 
 //fs.writeFileSync('adresses_06.json', JSON.stringify(meetingData));
 
 function printIt(){   
-console.log(scheduleData,meetingData);
+console.log(meetingData);
 }
 
 setTimeout(printIt,2000);
