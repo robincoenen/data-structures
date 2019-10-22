@@ -84,39 +84,3 @@ fs.writeFileSync('adresses_06.json', JSON.stringify(newArray));
 
  });
  
-//  var finalData = [];
-// meetingData.forEach(meetingDataObject => {
-//     // console.log(contentObject.locationDetails.streetAddress);
-//     if(meetingDataObject.locationMeeting != undefined) {
-//     //   console.log(contentObject.locationDetails.streetAddress); 
-//       finalData.push(meetingDataObject);
-//       console.log(finalData);
-//     }
-// });
-
-
-
-// meetingData.push(combinedData);
-//                 console.log(meetingData);
-//fs.writeFileSync('adresses_06.json', JSON.stringify(meetingData));
-
-// function printIt(){   
-// console.log(combinedData);
-// }
-
-// setTimeout(printIt,2000);
-
-// var meetingData = [];
-
-//  $('td').each(function(i, elem) {
-//      if($(elem).attr("style")=="border-bottom:1px solid #e3e3e3; width:260px"){
-         
-//          var thisMeeting = {};
-//          thisMeeting.streetAdress = $(elem).html().split('<br>')[2].trim().split(',')[0];
-//          thisMeeting.city = "NewYork";
-//          thisMeeting.state = "NY";
-//          meetingData.push(thisMeeting);
-//      }
-//  });
-
-// console.log(meetingData);
