@@ -6,9 +6,10 @@ let content_f = fs.readFileSync('/home/ec2-user/environment/data-structures/01_w
 const $ = cheerio.load(content_f);
 
 var meetingData = [];
-var scheduleData =[];
 
  $('td').each(function(i, elem) {
+          var combinedData ={};
+
   
      if($(elem).attr("style")== "border-bottom:1px solid #e3e3e3; width:260px"){
          
@@ -16,10 +17,9 @@ var scheduleData =[];
          thisMeeting.buildingName = ($(elem).find('h4').text().trim());
 
          thisMeeting.streetAdress = $(elem).html().split('<br>')[2].trim().split(',')[0];
-         thisMeeting.streetAdress = $(elem).html().split('<br>')[2].trim().split(',')[0];
          thisMeeting.city = "NewYork";
          thisMeeting.state = "NY";
-         meetingData.push(thisMeeting);
+         ///meetingData.push(thisMeeting);
 
          var zipCode = $(elem).text().match(/\d{5}/);
               if (zipCode != null && zipCode != undefined){
@@ -31,7 +31,9 @@ var scheduleData =[];
                           if (src != null && src != undefined) {
                           thisMeeting.access = true;
                         }
-            
+         combinedData.locationMeeting = thisMeeting;
+         //console.log(combinedData);
+
 }
 
        else if ($(elem).attr("style") == "border-bottom:1px solid #e3e3e3;width:350px;"){
@@ -49,7 +51,8 @@ var scheduleData =[];
                     thisTime = thisTime.split("        ");
 
           //scheduleData.push(thisTime);
-          var singleMeeting = [];    
+          var singleMeeting = [];  
+
                     for (var i=0; i<thisTime.length; i++){
                     var scheduleSingle = {};
                     scheduleSingle.day = thisTime[i].trim().split(' ')[0];
@@ -58,19 +61,48 @@ var scheduleData =[];
                     scheduleSingle.time = thisTime[i].trim().split(' ')[3];
                     scheduleSingle.type = thisTime[i].trim().split(' ')[9];
                     singleMeeting.push(scheduleSingle);
-                    console.log(singleMeeting);
+                    //console.log(scheduleSingle);
+                    //console.log(singleMeeting);
+                    //meetingData.time = scheduleData;
+                    combinedData.scheduleTime = singleMeeting;
+                    //console.log(combinedData);
                     }
      }
- });
+     
+      meetingData.push(combinedData);
+                //console.log(meetingData);
+function replaceUndefinedOrNull(key, locationMeeting) {
+  if (locationMeeting === null || locationMeeting === undefined) {
+    return undefined;
+  }
+  
+  return locationMeeting;
+}
+                fs.writeFileSync('adresses_06.json', JSON.stringify(meetingData,replaceUndefinedOrNull));
 
+ });
+ 
+//  var finalData = [];
+// meetingData.forEach(meetingDataObject => {
+//     // console.log(contentObject.locationDetails.streetAddress);
+//     if(meetingDataObject.locationMeeting != undefined) {
+//     //   console.log(contentObject.locationDetails.streetAddress); 
+//       finalData.push(meetingDataObject);
+//       console.log(finalData);
+//     }
+// });
+
+
+
+// meetingData.push(combinedData);
+//                 console.log(meetingData);
 //fs.writeFileSync('adresses_06.json', JSON.stringify(meetingData));
 
-function printIt(){   
-console.log(meetingData);
-}
+// function printIt(){   
+// console.log(combinedData);
+// }
 
-setTimeout(printIt,2000);
-
+// setTimeout(printIt,2000);
 
 // var meetingData = [];
 
