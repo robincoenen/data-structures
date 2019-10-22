@@ -71,15 +71,16 @@ var meetingDetails =[];
      }
      
       meetingData.push(combinedData);
-                //console.log(meetingData);
-function replaceUndefinedOrNull(key, locationMeeting) {
-  if (locationMeeting == null || locationMeeting == undefined) {
-    return undefined;
-  }
+      
+                var newArray = meetingData.filter(value => JSON.stringify(value) !== '{}');
+
+//                 var myArrayNew = meetingData.filter(function (el) {
+//     return el != undefined && el != null;
+//   });
   
-  return locationMeeting;
-}
-                fs.writeFileSync('adresses_06.json', JSON.stringify(meetingData,replaceUndefinedOrNull));
+                  //console.log(myArrayNew);
+
+fs.writeFileSync('adresses_06.json', JSON.stringify(newArray));
 
  });
  
