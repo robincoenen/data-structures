@@ -1,7 +1,7 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
 
-let content_f = fs.readFileSync('/home/ec2-user/environment/data-structures/01_week01/data/06.txt');
+let content_f = fs.readFileSync('/home/ec2-user/environment/data-structures/01_week01/data/05.txt');
 
 const $ = cheerio.load(content_f);
 
@@ -9,7 +9,7 @@ var meetingData = [];
 
  $('td').each(function(i, elem) {
           var combinedData ={};
-
+var meetingDetails =[];
   
      if($(elem).attr("style")== "border-bottom:1px solid #e3e3e3; width:260px"){
          
@@ -31,7 +31,8 @@ var meetingData = [];
                           if (src != null && src != undefined) {
                           thisMeeting.access = true;
                         }
-         combinedData.locationMeeting = thisMeeting;
+         meetingDetails.push(thisMeeting);
+         combinedData.locationMeeting = meetingDetails;
          //console.log(combinedData);
 
 }
@@ -72,7 +73,7 @@ var meetingData = [];
       meetingData.push(combinedData);
                 //console.log(meetingData);
 function replaceUndefinedOrNull(key, locationMeeting) {
-  if (locationMeeting === null || locationMeeting === undefined) {
+  if (locationMeeting == null || locationMeeting == undefined) {
     return undefined;
   }
   
