@@ -77,10 +77,9 @@ var meetingDetails =[];
 //                 var myArrayNew = meetingData.filter(function (el) {
 //     return el != undefined && el != null;
 //   });
-  
                   //console.log(myArrayNew);
 
-fs.writeFileSync('adresses_06.json', JSON.stringify(newArray));
+fs.writeFileSync('adresses_05.json', JSON.stringify(newArray));
 
  });
  
