@@ -8,15 +8,11 @@ Followed the steps of week 03, week04 and week05 to create a complete and clean 
 Finally I created two tables, one contains the data about the meeting (location, geolocation and description), another about the time(weekday, starttime, endtime).
 
 
-
-Proof of Concept — no sql :
+Proof of Concept — meeting (location, geolocation and description) :
 ![alt text](./proof_of_concept_a.png)
 
-Proof of Concept — sql :
+Proof of Concept — time(weekday, starttime, endtime) :
 ![alt text](./proof_of_concept_b.png)
-
-
-
 
 
 ––––––––––––––––––––––––––
