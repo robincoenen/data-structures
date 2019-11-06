@@ -12,8 +12,3 @@ A photon particle is set up and equipped with an wifi sensor. A temperature sens
 
 **time spent**
 ca. 5 days à 3 hour. 
-**illustrative image**
-collage, original image made by ken lodding, 
-used for BYTE magazine, 
-november 1978, volume 3, number 11, 
-found here: https://archive.org/details/byte-magazine-1978-11-rescan
