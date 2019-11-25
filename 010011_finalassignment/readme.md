@@ -1,9 +1,6 @@
 #Week 10 and 11 — Creating Interfaces
 ==========================
 
-![alt text](./illustrative_image_5.png)
-
-
 ## Preparation of the final assignments
 
 A first overview of the final assignments can be seen here: http://18.218.104.82:8080
