@@ -49,6 +49,8 @@ Unfortanately I wasnt aware that my data wasnt stored between the 10 November an
 and just realized it at the beginning of december.\
 In order to create a line graph out of the recorded data it was  queried out of the sql database.
 This query was then inserted into as data (temperature and time) into an d.3 linegraph.
+As it is a lot of data which is fetched from sql and then transformed via d3 into an visual representation as a svg, it takes a moment until the svg loads.
+THere might be a more effective way, in terms of speed, to achieve this.
 
 
 
@@ -56,4 +58,25 @@ This query was then inserted into as data (temperature and time) into an d.3 lin
 ### c) Anonymous Alcoholics: Emergency Map
 ![alt text](./c_finalmap.png)
 
-The visualization of my room temperature is a linegraph. It shows the average temperature of the day of one month. It is an almost static graph. A tooltip allows the user to get the exact average temperature.
+Visit here: http://18.218.104.82:8080/aaData
+
+The data represented on the map depicts data which was scraped from html webpages which listed meetings of anonymous alcoholics meetings.
+This data was then geocoded by its given adresses and then stored in an sql database. 
+In this process I created two tables, one contained everything which I thought important for the nature of each meeting and the other table for the 
+timing of each meeting:
+
+![alt text](./c_sql_database.png)
+
+
+When querying this data in order to represent it on a map it was necessary to connect these two tables. 
+I achieved it by creating a virtual temporarily third table in which the two real tables were joined on their same id. 
+While structuring the data I gave each Time, even if it was at the exact same "meeting nature" parameters, an own id. 
+This effect can also be seen in the popups of the Map. It means that each adress is repeated for each time. 
+This means some some visual redudancy but at the same time this redudancy increases the reliability and delivers adresses, 
+even if one data endpoint is not reacting for whatever reason.\
+The concept of the map is one of an "emergency map". 
+That means I am using moment.js in order to reduce the items which appear on the map only on the very day the user visits the website.
+If the user is in need and needs a meeting at this very moment, he does not have to click through many offers, but knows that everything which will be shown there,
+is valid data for him/her. 
+This approach also reduces the amount of data to load onto the map and increases the speed. 
+
