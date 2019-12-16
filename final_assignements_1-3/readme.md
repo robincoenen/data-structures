@@ -85,7 +85,7 @@ This approach also reduces the amount of data to load onto the map and increases
 
 
 
-<sub><sup> Data Structures, 2019 — Robin Coenen </sup></sub>
-<sub><sup> Taught by Aaron Hill </sup></sub>
+<sub><sup> Data Structures, 2019 — Robin Coenen </sup></sub>\
+<sub><sup> Taught by Aaron Hill </sup></sub>\
 <sub><sup> Thanks to Marisa, Neil and Saloni for their help and support </sup></sub>
 
