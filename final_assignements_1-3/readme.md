@@ -80,3 +80,12 @@ If the user is in need and needs a meeting at this very moment, he does not have
 is valid data for him/her. 
 This approach also reduces the amount of data to load onto the map and increases the speed. 
 
+
+
+
+
+
+<sub><sup> Data Structures, 2019 — Robin Coenen </sup></sub>
+<sub><sup> Taught by Aaron Hill </sup></sub>
+<sub><sup> Thanks to Marisa, Neil and Saloni for their help and support </sup></sub>
+
