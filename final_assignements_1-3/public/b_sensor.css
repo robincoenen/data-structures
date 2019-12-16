@@ -1,0 +1,40 @@
+
+
+#head { font-family: 'Space Mono', monospace;
+        font-size: 1.6em;
+        line-height: 1.2em;
+        margin-top: 5%;
+        margin-left: 10%;
+        text-align: left;
+}
+
+body { font-family: 'Space Mono', monospace;
+        font-size: 2em;
+        line-height: 1.2em;
+        text-align: left;
+        width: 100%;
+}
+
+p { font-family: 'Space Mono', monospace;
+        font-size: 2em;
+        max-width: 350px;
+        line-height: 1.2em;
+        text-align: left;
+
+}
+
+
+text { font-family: 'Space Mono', monospace;
+        font-size: 1.5em;
+        max-width: 350px;
+        line-height: 1.2em;
+        text-align: left;
+
+}
+
+
+#within {
+       margin-top: 10%; 
+       margin-left: 3%;
+        
+}

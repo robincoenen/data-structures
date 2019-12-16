@@ -1,0 +1,21 @@
+
+<!--These Handlebars help to transform content into styleable html elements-->
+
+
+{{#blogpost}}
+    <div class = lay>
+           <div class = "image"> 
+        <img src={{image}}> 
+      </div>
+      <div class = "category">
+          <p>Category: {{category}}</p> 
+      </div>
+      <div class = "title"> 
+        <p>{{title}}</p> 
+      </div>
+      <div class = "content">
+          <p>{{annotations}}</p> 
+      </div>
+
+    </div>  
+{{/blogpost}}
